@@ -1,0 +1,13 @@
+*SOILS: NTARLA EXPERIMENT SOILS
+
+*MCGI100001  McGill paper
+@SITE        COUNTRY          LAT     LONG SCS FAMILY
+ Generic     Generic           -99    -99  Generic
+@ SCOM  SALB  SLU1  SLDR  SLRO  SLNF  SLPF  SMHB  SMPX  SMKE
+   -99  0.13   -99  0.80  61.0     1     1   -99   -99   -99
+@  SLB  SLMH  SLLL  SDUL  SSAT  SRGF  SSKS  SBDM  SLOC  SLCL  SLSI  SLCF  SLNI  SLHW  SLHB  SCEC  SADC
+    10   -99   .12   .16   .22    .9   2.8  1.38   1.8     6    10   -99   -99   5.5   -99   -99   -99
+    25   -99   .18   .23   .32    .7     3  1.42   1.6     6     9   -99   -99   5.5   -99   -99   -99
+    45   -99   .22   .28   .40    .5   2.8  1.43     1    18    14   -99   -99   5.5   -99   -99   -99
+    65   -99   .25   .32   .44   .33   2.4  1.37    .5    28    21   -99   -99   5.5   -99   -99   -99
+   200   -99   .26   .38   .45   .07     2  1.35     1    35    25   -99   -99   5.5   -99   -99   -99

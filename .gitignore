@@ -1,0 +1,4 @@
+**/__pycache__/
+**/*.pdf
+**/dssat_mcgill_100000_MCGI100001_MG0001_samples_st_50_.pkl
+/figures/

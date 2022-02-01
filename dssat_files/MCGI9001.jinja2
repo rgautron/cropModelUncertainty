@@ -1,0 +1,78 @@
+*EXP.DETAILS: MCGILL EXP
+Original paper: Joshi, N., Singh, A. K., & Madramootoo, C. A. (2017). Application of DSSAT model to simulate corn yield under long-term tillage and residue practices. Transactions of the ASABE, 60(1), 67-83.
+Reproduced by Romain Gautron (romain.gautron@cirad.fr)
+
+*GENERAL
+@PEOPLE
+ -99
+@ADDRESS
+ -99
+@SITE
+ -99
+@ PAREA  PRNO  PLEN  PLDR  PLSP  PLAY HAREA  HRNO  HLEN  HARM.........
+    -99   -99   -99   -99   -99   -99   -99   -99   -99   -99
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0                       -99  1  1  0  1  1  0  1  0  0  1  0  0  1
+
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 MZ {{ingeno}} -99
+
+*FIELDS
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 1 -99      MCGI9001   -99   -99 DR002   120    15   -99  -99   -99  {{id_soil}} McGill Experimental Farm
+
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 1             -99             -99      37.5               -99   -99   -99   -99 FH201   -99
+
+*INITIAL CONDITIONS
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 1   -99 {{icdat}}   -99   -99   -99   -99   -99   -99   -99   -99   -99   -99 -99
+
+@C  ICBL  SH2O  SNH4  SNO3
+ 1    10   .16  1.45  7.25
+ 1    25   .23  1.45  7.25
+ 1    45   .28  1.45  7.25
+ 1    65   .32  1.45  7.25
+ 1   200   .38  1.45  7.25
+
+*PLANTING DETAILS
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1 {{pdate}}   -99   7.6   7.6     S     R   -99   -99   4.5   -99   -99   -99   -99   -99                        -99
+
+*FERTILIZERS (INORGANIC)
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 1     0 FE006 AP003     7    40   -99   -99   -99   -99   -99 basal banded diamo P
+ 1    14 AP004 AP002     7   140   -99   -99   -99   -99   -99 top banded ammo N
+
+*TILLAGE AND ROTATIONS
+@T TDATE TIMPL  TDEP TNAME
+{# 1 92136 TI009    20 Disk tandem before sowing#}
+ 1 {{pdate}} TI009    20 Disk tandem before sowing
+
+*SIMULATION CONTROLS
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 1 GE              1     1     S {{sdate}}{{'%6s'|format(rseed)}} -99
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 1 OP              Y     Y     N     N     N     N     N     Y     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 1 ME              W     M     E     R     S     R     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 1 MA              R     D     D     D     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT FMOPT
+ 1 OU              N     N     Y     1     N     N     N     N     N     N     N     N     N     C
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 1 PL          {{sdate}} 92365    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 1 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 1 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 1 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 1 HA          {{sdate}} 92365   100     0
